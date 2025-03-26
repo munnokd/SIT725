@@ -4,11 +4,11 @@
   "main": "index.js",
   "description": "sit 725 week 3 prac",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChoudharyNavit22/sit725-2021-t2-prac3.git"
+    "url": "git+https://github.com/munnokd/SIT725/tree/main/week3"
   },
   "keywords": [
     "Nodejs",
@@ -25,7 +25,7 @@
     "express": "^4.21.2"
   },
   "bugs": {
-    "url": "https://github.com/ChoudharyNavit22/sit725-2021-t2-prac3/issues"
+    "url": "https://github.com/munnokd/SIT725/issues"
   },
-  "homepage": "https://github.com/ChoudharyNavit22/sit725-2021-t2-prac3#readme"
+  "homepage": "https://github.com/munnokd/SIT725/issues#readme"
 }
