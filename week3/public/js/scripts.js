@@ -1,17 +1,4 @@
-const cardList = [
-    {
-        title: "Kitten 2",
-        image: "images/kitten-2.webp",
-        link: "About Kitten 2",
-        desciption: "Demo desciption about kitten 2"
-    },
-    {
-        title: "Kitten 3",
-        image: "images/kitten-3.jpeg",
-        link: "About Kitten 3",
-        desciption: "Demo desciption about kitten 3"
-    }
-]
+
 const clickMe = () => {
     alert("Thanks for clicking me. Hope you have a nice day!")
 }
@@ -28,6 +15,15 @@ const addCards = (items) => {
         $("#card-section").append(itemToAppend)
     });
 }
+
+const getProjects = () => {
+    $.get('http://localhost:3000/api/projects', (response) => {
+        if (response.statusCode == 200) {
+            addCards(response.data);
+        }
+    })
+}
+
 const submitForm = () => {
     let formData = {};
     formData.first_name = $('#first_name').val();
@@ -42,6 +38,6 @@ $(document).ready(function () {
     $('#formSubmit').click(() => {
         submitForm();
     })
-    addCards(cardList);
+    getProjects();
     $('.modal').modal();
 });
