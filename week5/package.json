@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "sit 725 week 3 prac",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/munnokd/SIT725/tree/main/week3"
+  },
+  "keywords": [
+    "Nodejs",
+    "Express",
+    "Materialize",
+    "HTML",
+    "JS",
+    "CSS"
+  ],
+  "author": "Kalp Prajapati",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mongoose": "^8.13.1"
+  },
+  "bugs": {
+    "url": "https://github.com/munnokd/SIT725/issues"
+  },
+  "homepage": "https://github.com/munnokd/SIT725/issues#readme"
+}
