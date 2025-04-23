@@ -1,28 +1,29 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 const port = 3000;
 
+const projectRoutes = require('./routes/projectRoutes');
+
+app.use(express.static(__dirname + '/views'));
+app.use(express.json());
 app.use(cors());
+app.use(express.urlencoded({ extended: false }));
 
-// Root endpoint
-app.get('/', (req, res) => {
-  res.status(200).send('Welcome to the Sum Calculator API');
+mongoose.connect('mongodb://localhost:27017/myprojectDB', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+mongoose.connection.on('connected', () => {
+    console.log('Connected to MongoDB!');
 });
 
-// Add endpoint
-app.get('/add', (req, res) => {
-  const num1 = parseFloat(req.query.num1);
-  const num2 = parseFloat(req.query.num2);
 
-  if (!isNaN(num1) && !isNaN(num2)) {
-    const sum = num1 + num2;
-    res.json({ result: sum });
-  } else {
-    res.status(400).json({ error: 'Invalid input, please provide two numbers' });
-  }
-});
+app.use('/api', projectRoutes);
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+    console.log(`App listening on port ${port}`);
 });
+
+module.exports = app;

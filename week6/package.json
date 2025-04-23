@@ -5,7 +5,7 @@
   "description": "sit 725 week 3 prac",
   "scripts": {
     "start": "node app.js",
-    "test" : "mocha --reporter spec"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
